@@ -30,11 +30,16 @@
         {
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
-            textBox1 = new TextBox();
+            EnumarationsGroupBox = new GroupBox();
+            IntValuelabel = new Label();
+            ChooseValuelabel = new Label();
+            ChooseEnumarationlabel = new Label();
             ValuesListBox = new ListBox();
+            textBox1 = new TextBox();
             EnumsListBox = new ListBox();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
+            EnumarationsGroupBox.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -49,9 +54,7 @@
             // 
             // tabPage1
             // 
-            tabPage1.Controls.Add(textBox1);
-            tabPage1.Controls.Add(ValuesListBox);
-            tabPage1.Controls.Add(EnumsListBox);
+            tabPage1.Controls.Add(EnumarationsGroupBox);
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
@@ -60,30 +63,72 @@
             tabPage1.Text = "Enums";
             tabPage1.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // EnumarationsGroupBox
             // 
-            textBox1.Location = new Point(315, 37);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(191, 23);
-            textBox1.TabIndex = 2;
+            EnumarationsGroupBox.Controls.Add(IntValuelabel);
+            EnumarationsGroupBox.Controls.Add(ChooseValuelabel);
+            EnumarationsGroupBox.Controls.Add(ChooseEnumarationlabel);
+            EnumarationsGroupBox.Controls.Add(ValuesListBox);
+            EnumarationsGroupBox.Controls.Add(textBox1);
+            EnumarationsGroupBox.Controls.Add(EnumsListBox);
+            EnumarationsGroupBox.Location = new Point(8, 6);
+            EnumarationsGroupBox.Name = "EnumarationsGroupBox";
+            EnumarationsGroupBox.Size = new Size(778, 275);
+            EnumarationsGroupBox.TabIndex = 3;
+            EnumarationsGroupBox.TabStop = false;
+            EnumarationsGroupBox.Text = "Enumarations";
+            // 
+            // IntValuelabel
+            // 
+            IntValuelabel.AutoSize = true;
+            IntValuelabel.Location = new Point(357, 25);
+            IntValuelabel.Name = "IntValuelabel";
+            IntValuelabel.Size = new Size(55, 15);
+            IntValuelabel.TabIndex = 5;
+            IntValuelabel.Text = "Int value:";
+            // 
+            // ChooseValuelabel
+            // 
+            ChooseValuelabel.AutoSize = true;
+            ChooseValuelabel.Location = new Point(183, 25);
+            ChooseValuelabel.Name = "ChooseValuelabel";
+            ChooseValuelabel.Size = new Size(81, 15);
+            ChooseValuelabel.TabIndex = 4;
+            ChooseValuelabel.Text = "Choose value:";
+            // 
+            // ChooseEnumarationlabel
+            // 
+            ChooseEnumarationlabel.AutoSize = true;
+            ChooseEnumarationlabel.Location = new Point(6, 25);
+            ChooseEnumarationlabel.Name = "ChooseEnumarationlabel";
+            ChooseEnumarationlabel.Size = new Size(121, 15);
+            ChooseEnumarationlabel.TabIndex = 3;
+            ChooseEnumarationlabel.Text = "Choose enumaration:";
             // 
             // ValuesListBox
             // 
             ValuesListBox.FormattingEnabled = true;
             ValuesListBox.ItemHeight = 15;
-            ValuesListBox.Location = new Point(175, 37);
+            ValuesListBox.Location = new Point(183, 43);
             ValuesListBox.Name = "ValuesListBox";
-            ValuesListBox.Size = new Size(120, 199);
+            ValuesListBox.Size = new Size(154, 214);
             ValuesListBox.TabIndex = 1;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(357, 43);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(191, 23);
+            textBox1.TabIndex = 2;
             // 
             // EnumsListBox
             // 
             EnumsListBox.FormattingEnabled = true;
             EnumsListBox.ItemHeight = 15;
-            EnumsListBox.Location = new Point(35, 37);
+            EnumsListBox.Location = new Point(6, 43);
             EnumsListBox.Name = "EnumsListBox";
             EnumsListBox.ScrollAlwaysVisible = true;
-            EnumsListBox.Size = new Size(120, 199);
+            EnumsListBox.Size = new Size(154, 214);
             EnumsListBox.TabIndex = 0;
             EnumsListBox.SelectedIndexChanged += EnumsListBox_SelectedIndexChanged;
             // 
@@ -98,7 +143,8 @@
             Load += MainForm_Load;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
-            tabPage1.PerformLayout();
+            EnumarationsGroupBox.ResumeLayout(false);
+            EnumarationsGroupBox.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -109,5 +155,9 @@
         private ListBox ValuesListBox;
         private ListBox EnumsListBox;
         private TextBox textBox1;
+        private GroupBox EnumarationsGroupBox;
+        private Label ChooseEnumarationlabel;
+        private Label IntValuelabel;
+        private Label ChooseValuelabel;
     }
 }
