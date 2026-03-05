@@ -9,14 +9,17 @@ namespace Programming
         Type[] enumTypes = { typeof(Colors), typeof(EducationForm), typeof(Genre), typeof(Manufacture), typeof(Season), typeof(Weekday) };
         public void MainForm_Load(object sender, EventArgs e)
         {
+            comboBoxSeason.DataSource = Enum.GetValues(typeof(Season));
             string[] enums = { "Color", "EducationForm", "Genre", "Manufacture", "Season", "Weekday" };
             EnumsListBox.Items.AddRange(enums);
             EnumsListBox.SelectedIndex = 0;
         }
+            
         public MainForm()
         {
             InitializeComponent();
         }
+
         private void EnumsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -77,6 +80,33 @@ namespace Programming
             else
             {
                 labelRecognizedValue.Text = "Нет такого дня недели";
+            }
+        }
+
+        private void buttonGo_Click(object sender, EventArgs e)
+        {
+            if (comboBoxSeason.SelectedItem == null)
+                return;
+
+            Season selectedSeason = (Season)comboBoxSeason.SelectedItem;
+
+            switch (selectedSeason)
+            {
+                case Season.Summer:
+                    MessageBox.Show("Ура! Солнце!");
+                    break;
+
+                case Season.Autumn:
+                    this.BackColor = System.Drawing.ColorTranslator.FromHtml("#e29c45");
+                    break;
+
+                case Season.Winter:
+                    MessageBox.Show("Бррр! Холодно!");
+                    break;
+
+                case Season.Spring:
+                    this.BackColor = System.Drawing.ColorTranslator.FromHtml("#559c45");
+                    break;
             }
         }
     }

@@ -31,6 +31,7 @@
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             weekdayParsinggroupBox = new GroupBox();
+            labelRecognizedValue = new Label();
             labelTypeValueForParsing = new Label();
             buttonParse = new Button();
             textBoxWeekendParsing = new TextBox();
@@ -41,11 +42,15 @@
             ValuesListBox = new ListBox();
             intValue = new TextBox();
             EnumsListBox = new ListBox();
-            labelRecognizedValue = new Label();
+            groupBoxSeasonHandle = new GroupBox();
+            comboBoxSeason = new ComboBox();
+            buttonGo = new Button();
+            labelChooseSeason = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             weekdayParsinggroupBox.SuspendLayout();
             EnumarationsGroupBox.SuspendLayout();
+            groupBoxSeasonHandle.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -60,6 +65,7 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(groupBoxSeasonHandle);
             tabPage1.Controls.Add(weekdayParsinggroupBox);
             tabPage1.Controls.Add(EnumarationsGroupBox);
             tabPage1.Location = new Point(4, 24);
@@ -82,6 +88,14 @@
             weekdayParsinggroupBox.TabIndex = 4;
             weekdayParsinggroupBox.TabStop = false;
             weekdayParsinggroupBox.Text = "Weekday Parsing";
+            // 
+            // labelRecognizedValue
+            // 
+            labelRecognizedValue.AutoSize = true;
+            labelRecognizedValue.Location = new Point(6, 84);
+            labelRecognizedValue.Name = "labelRecognizedValue";
+            labelRecognizedValue.Size = new Size(0, 15);
+            labelRecognizedValue.TabIndex = 3;
             // 
             // labelTypeValueForParsing
             // 
@@ -165,7 +179,7 @@
             // 
             intValue.Location = new Point(357, 43);
             intValue.Name = "intValue";
-            intValue.Size = new Size(191, 23);
+            intValue.Size = new Size(99, 23);
             intValue.TabIndex = 2;
             // 
             // EnumsListBox
@@ -179,13 +193,44 @@
             EnumsListBox.TabIndex = 0;
             EnumsListBox.SelectedIndexChanged += EnumsListBox_SelectedIndexChanged;
             // 
-            // labelRecognizedValue
+            // groupBoxSeasonHandle
             // 
-            labelRecognizedValue.AutoSize = true;
-            labelRecognizedValue.Location = new Point(6, 84);
-            labelRecognizedValue.Name = "labelRecognizedValue";
-            labelRecognizedValue.Size = new Size(0, 15);
-            labelRecognizedValue.TabIndex = 3;
+            groupBoxSeasonHandle.Controls.Add(labelChooseSeason);
+            groupBoxSeasonHandle.Controls.Add(buttonGo);
+            groupBoxSeasonHandle.Controls.Add(comboBoxSeason);
+            groupBoxSeasonHandle.Location = new Point(365, 296);
+            groupBoxSeasonHandle.Name = "groupBoxSeasonHandle";
+            groupBoxSeasonHandle.Size = new Size(419, 142);
+            groupBoxSeasonHandle.TabIndex = 5;
+            groupBoxSeasonHandle.TabStop = false;
+            groupBoxSeasonHandle.Text = "Season Handle";
+            // 
+            // comboBoxSeason
+            // 
+            comboBoxSeason.FormattingEnabled = true;
+            comboBoxSeason.Location = new Point(6, 46);
+            comboBoxSeason.Name = "comboBoxSeason";
+            comboBoxSeason.Size = new Size(185, 23);
+            comboBoxSeason.TabIndex = 0;
+            // 
+            // buttonGo
+            // 
+            buttonGo.Location = new Point(197, 46);
+            buttonGo.Name = "buttonGo";
+            buttonGo.Size = new Size(63, 23);
+            buttonGo.TabIndex = 1;
+            buttonGo.Text = "Go!";
+            buttonGo.UseVisualStyleBackColor = true;
+            buttonGo.Click += buttonGo_Click;
+            // 
+            // labelChooseSeason
+            // 
+            labelChooseSeason.AutoSize = true;
+            labelChooseSeason.Location = new Point(6, 28);
+            labelChooseSeason.Name = "labelChooseSeason";
+            labelChooseSeason.Size = new Size(89, 15);
+            labelChooseSeason.TabIndex = 2;
+            labelChooseSeason.Text = "Choose season:";
             // 
             // MainForm
             // 
@@ -202,6 +247,8 @@
             weekdayParsinggroupBox.PerformLayout();
             EnumarationsGroupBox.ResumeLayout(false);
             EnumarationsGroupBox.PerformLayout();
+            groupBoxSeasonHandle.ResumeLayout(false);
+            groupBoxSeasonHandle.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -221,5 +268,9 @@
         private Button buttonParse;
         private TextBox textBoxWeekendParsing;
         private Label labelRecognizedValue;
+        private GroupBox groupBoxSeasonHandle;
+        private Label labelChooseSeason;
+        private Button buttonGo;
+        private ComboBox comboBoxSeason;
     }
 }
