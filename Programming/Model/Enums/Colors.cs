@@ -10,7 +10,7 @@ namespace Programming.Model.Enums
     {
     }*/
 
-    public enum Color
+    public enum Colors
     {
         Red,
         Green, 

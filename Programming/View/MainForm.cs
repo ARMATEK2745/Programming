@@ -6,6 +6,7 @@ namespace Programming
 {
     public partial class MainForm : Form
     {
+        Type[] enumTypes = { typeof(Colors), typeof(EducationForm), typeof(Genre), typeof(Manufacture), typeof(Season), typeof(Weekday) }; 
         public void MainForm_Load(object sender, EventArgs e)
         {
             string[] enums = { "Color", "EducationForm", "Genre", "Manufacture", "Season", "Weekday" };
@@ -15,15 +16,17 @@ namespace Programming
         public MainForm()
         {
             InitializeComponent();
+            EnumsListBox.SelectedIndexChanged += EnumsListBox_SelectedIndexChanged;
+            ValuesListBox.SelectedIndexChanged += ValuesListBox_SelectedIndexChanged;
         }
         private void EnumsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
 
             switch (EnumsListBox.SelectedItem.ToString())
             {
                 case "Color":
-                    ValuesListBox.DataSource = Enum.GetValues(typeof(Programming.Model.Enums.Color));
+                    ValuesListBox.DataSource = Enum.GetValues(typeof(Colors));
                     break;
 
                 case "EducationForm":
@@ -48,5 +51,20 @@ namespace Programming
             }
         }
 
+        private void ValuesListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selectedIndex = EnumsListBox.SelectedIndex;
+            if (selectedIndex < 0 || selectedIndex >= enumTypes.Length)
+                return;
+
+            string selected_item = ValuesListBox.SelectedItem.ToString();
+            if (string.IsNullOrEmpty(selected_item))
+                return;
+
+            Type enumType = enumTypes[selectedIndex];
+            object enumValue = Enum.Parse(enumType, selected_item);
+            int numberValue = (int)enumValue;
+            intValue.Text = numberValue.ToString();
+        }
     }
 }
