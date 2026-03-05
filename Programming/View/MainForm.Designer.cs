@@ -33,7 +33,7 @@
             weekdayParsinggroupBox = new GroupBox();
             labelTypeValueForParsing = new Label();
             buttonParse = new Button();
-            textBox2 = new TextBox();
+            textBoxWeekendParsing = new TextBox();
             EnumarationsGroupBox = new GroupBox();
             IntValuelabel = new Label();
             ChooseValuelabel = new Label();
@@ -41,6 +41,7 @@
             ValuesListBox = new ListBox();
             intValue = new TextBox();
             EnumsListBox = new ListBox();
+            labelRecognizedValue = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             weekdayParsinggroupBox.SuspendLayout();
@@ -71,9 +72,10 @@
             // 
             // weekdayParsinggroupBox
             // 
+            weekdayParsinggroupBox.Controls.Add(labelRecognizedValue);
             weekdayParsinggroupBox.Controls.Add(labelTypeValueForParsing);
             weekdayParsinggroupBox.Controls.Add(buttonParse);
-            weekdayParsinggroupBox.Controls.Add(textBox2);
+            weekdayParsinggroupBox.Controls.Add(textBoxWeekendParsing);
             weekdayParsinggroupBox.Location = new Point(8, 296);
             weekdayParsinggroupBox.Name = "weekdayParsinggroupBox";
             weekdayParsinggroupBox.Size = new Size(337, 142);
@@ -98,13 +100,14 @@
             buttonParse.TabIndex = 1;
             buttonParse.Text = "Parse";
             buttonParse.UseVisualStyleBackColor = true;
+            buttonParse.Click += buttonParse_Click;
             // 
-            // textBox2
+            // textBoxWeekendParsing
             // 
-            textBox2.Location = new Point(6, 46);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(211, 23);
-            textBox2.TabIndex = 0;
+            textBoxWeekendParsing.Location = new Point(6, 46);
+            textBoxWeekendParsing.Name = "textBoxWeekendParsing";
+            textBoxWeekendParsing.Size = new Size(211, 23);
+            textBoxWeekendParsing.TabIndex = 0;
             // 
             // EnumarationsGroupBox
             // 
@@ -176,6 +179,14 @@
             EnumsListBox.TabIndex = 0;
             EnumsListBox.SelectedIndexChanged += EnumsListBox_SelectedIndexChanged;
             // 
+            // labelRecognizedValue
+            // 
+            labelRecognizedValue.AutoSize = true;
+            labelRecognizedValue.Location = new Point(6, 84);
+            labelRecognizedValue.Name = "labelRecognizedValue";
+            labelRecognizedValue.Size = new Size(0, 15);
+            labelRecognizedValue.TabIndex = 3;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -208,6 +219,7 @@
         private GroupBox weekdayParsinggroupBox;
         private Label labelTypeValueForParsing;
         private Button buttonParse;
-        private TextBox textBox2;
+        private TextBox textBoxWeekendParsing;
+        private Label labelRecognizedValue;
     }
 }

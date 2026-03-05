@@ -6,7 +6,7 @@ namespace Programming
 {
     public partial class MainForm : Form
     {
-        Type[] enumTypes = { typeof(Colors), typeof(EducationForm), typeof(Genre), typeof(Manufacture), typeof(Season), typeof(Weekday) }; 
+        Type[] enumTypes = { typeof(Colors), typeof(EducationForm), typeof(Genre), typeof(Manufacture), typeof(Season), typeof(Weekday) };
         public void MainForm_Load(object sender, EventArgs e)
         {
             string[] enums = { "Color", "EducationForm", "Genre", "Manufacture", "Season", "Weekday" };
@@ -16,8 +16,6 @@ namespace Programming
         public MainForm()
         {
             InitializeComponent();
-            EnumsListBox.SelectedIndexChanged += EnumsListBox_SelectedIndexChanged;
-            ValuesListBox.SelectedIndexChanged += ValuesListBox_SelectedIndexChanged;
         }
         private void EnumsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -65,6 +63,21 @@ namespace Programming
             object enumValue = Enum.Parse(enumType, selected_item);
             int numberValue = (int)enumValue;
             intValue.Text = numberValue.ToString();
+        }
+
+        private void buttonParse_Click(object sender, EventArgs e)
+        {
+            string input = textBoxWeekendParsing.Text.Trim();
+
+            if (Enum.TryParse(input, out Weekday day) && Enum.IsDefined(typeof(Weekday), day))
+            {
+                int number = (int)day;
+                labelRecognizedValue.Text = $"Это день недели ({day} = {number})";
+            }
+            else
+            {
+                labelRecognizedValue.Text = "Нет такого дня недели";
+            }
         }
     }
 }
