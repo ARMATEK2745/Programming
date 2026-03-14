@@ -10,25 +10,42 @@ namespace Programming.Model
     {
         private string name = "";
         private int minutesDuration;
-        private int releaseYear
+        private int releaseYear;
+        private string genre = "";
+        private double rating;
+
+
+        public string Name { get { return name; } set { name = value; } }
+
+        public int MinutesDuration
+        {
+            set {
+                if (value >= 0) minutesDuration = value;
+                else throw new ArgumentException(nameof(value),"Значение не может быть отрицательным");
+            }
+            get { return minutesDuration; }
+        }
+
+        public int ReleaseYear
         {
             set
             {
                 if (value >= 1900 && value <= DateTime.Now.Year)
                     releaseYear = value;
-                else
-                    Console.WriteLine("Год выпуска должен быть в диапазоне от 1900 до текущего года");
+                else throw new ArgumentException(nameof(value),"Год выпуска должен быть в диапазоне от 1900 до текущего года");
 
             }
             get { return releaseYear; }
         }
-        private string genre = "";
-        private double rating
+
+        public string Genre { get { return genre; } set { genre = value; } }
+
+        public double Rating
         {
             set 
             {
                 if (value >= 0 && value <= 10) rating = value;
-                else Console.WriteLine("Рейтинг должен быть в диапазоне от 0 до 10");
+                else throw new ArgumentException(nameof(value),"Рейтинг должен быть в диапазоне от 0 до 10");
             }
             get { return rating; }
         }

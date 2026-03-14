@@ -11,6 +11,28 @@ namespace Programming.Model
         private double length; //длина
         private double width; //ширина
         private string colour = ""; //цвет
+
+        public double Length
+        {
+            set
+            {
+                if (value>=0) length = value;
+                else throw new ArgumentException(nameof(value), "Значение не может быть отрицательным");
+            }
+            get { return length; }
+        }
+
+        public double Width
+        {
+            set
+            {
+                if (value >= 0) width = value;
+                else throw new ArgumentException(nameof(value), "Значение не может быть отрицательным");
+            }
+            get { return width; }
+        }
+
+        public string Colour { get { return colour; } set { colour = value; } }
     }
 }
 // Класс Прямоугольник

@@ -8,14 +8,39 @@ namespace Programming.Model
 {
     internal class Time
     {
-        private int hours
+        private int hours;
+        private int minutes;
+        private int seconds;
+
+        public int Hours
         {
-            set 
+            set
             {
                 if (value >= 0 && value <= 23) hours = value;
-                else Console.WriteLine("Час должен быть в диапаоне от 0 до 23");
+                else throw new ArgumentException(nameof(value), "Час должен быть в диапаоне от 0 до 23");
             }
+            get { return hours; }
 
+        }
+
+        public int Minutes
+        {
+            set
+            {
+                if (value >= 0 && value <= 60) minutes = value;
+                else throw new ArgumentException(nameof(value),"Минуты должны быть в диапаоне от 0 до 60");
+            }
+            get { return minutes; }
+        }
+
+        public int Seconds
+        {
+            set
+            {
+                if (value >= 0 && value <= 60) seconds = value;
+                else throw new ArgumentException(nameof(value),"Секунды должны быть в диапаоне от 0 до 60");
+            }
+            get { return seconds; }
         }
     }
 }
