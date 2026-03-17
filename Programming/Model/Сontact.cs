@@ -17,5 +17,14 @@ namespace Programming.Model
         public string PhoneNumber { get { return phoneNumber; } set { phoneNumber = value; } }
 
         public string Email { get { return email; } set { email = value; } }
+
+        public Сontact(string name, string phoneNumber, string email)
+        {
+            this.Name = name;
+            this.PhoneNumber = phoneNumber;
+            this.Email = email;
+        }
+
+        public Сontact() { }
     }
 }

@@ -28,7 +28,7 @@ namespace Programming.Model
             set
             {
                 if (value >= 0 && value <= 60) minutes = value;
-                else throw new ArgumentException(nameof(value),"Минуты должны быть в диапаоне от 0 до 60");
+                else throw new ArgumentException(nameof(value), "Минуты должны быть в диапаоне от 0 до 60");
             }
             get { return minutes; }
         }
@@ -38,10 +38,19 @@ namespace Programming.Model
             set
             {
                 if (value >= 0 && value <= 60) seconds = value;
-                else throw new ArgumentException(nameof(value),"Секунды должны быть в диапаоне от 0 до 60");
+                else throw new ArgumentException(nameof(value), "Секунды должны быть в диапаоне от 0 до 60");
             }
             get { return seconds; }
         }
+
+        public Time(int hours, int minutes, int seconds)
+        {
+            this.Hours = hours;
+            this.Minutes = minutes;
+            this.Seconds = seconds;
+        }
+
+        public Time() { }
     }
 }
 // Класс Время

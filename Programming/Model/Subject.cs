@@ -33,5 +33,14 @@ namespace Programming.Model
             }
             get { return grade; }
         }
+
+        public Subject(string name, int semester, int grade)
+        {
+            Name = name;
+            Semester = semester;
+            Grade = grade;
+        }
+
+        public Subject() { }
     }
 }

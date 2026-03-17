@@ -8,15 +8,15 @@ namespace Programming.Model
 {
     internal class Rectangle
     {
-        private double length; //длина
-        private double width; //ширина
+        private double length;      //длина
+        private double width;       //ширина
         private string colour = ""; //цвет
 
         public double Length
         {
             set
             {
-                if (value>=0) length = value;
+                if (value >= 0) length = value;
                 else throw new ArgumentException(nameof(value), "Значение не может быть отрицательным");
             }
             get { return length; }
@@ -33,6 +33,15 @@ namespace Programming.Model
         }
 
         public string Colour { get { return colour; } set { colour = value; } }
+
+        public Rectangle(double length, double width, string colour)
+        {
+            Length = length;
+            Width = width;
+            Colour = colour;
+        }
+
+        public Rectangle() { }
     }
 }
 // Класс Прямоугольник

@@ -16,18 +16,25 @@ namespace Programming.Model
 
         public string Destination { get { return destination; } set { destination = value; } }
 
-        public int MinutesFlightTime 
+        public int MinutesFlightTime
         {
             set
             {
                 if (value >= 0) minutesFlightTime = value;
                 else throw new ArgumentException(nameof(value), "Значение не может быть отрицательным");
-            } 
+            }
             get { return minutesFlightTime; }
         }
+
+        public Flight(string departurePoint, string destination, int minutesFlightTime)
+        {
+            DeparturePoint = departurePoint;
+            Destination = destination;
+            MinutesFlightTime = minutesFlightTime;
+        }
+
+        public Flight() { }
     }
-
-
 }
 // Класс Рейс
 // Начало описания класса

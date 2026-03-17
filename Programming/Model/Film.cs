@@ -49,6 +49,17 @@ namespace Programming.Model
             }
             get { return rating; }
         }
+
+        public Film(string name, int minutesDuration, int releaseYear, string genre, double rating)
+        {
+            Name = name;
+            MinutesDuration = minutesDuration;
+            ReleaseYear = releaseYear;
+            Genre = genre;
+            Rating = rating;
+        }
+
+        public Film(){ }
     }
 }
 // Класс Фильм
