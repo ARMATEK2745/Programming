@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace Programming.Model
 {
-    internal class Rectangle
+    internal class Rectangles
     {
         private double length;      //длина
         private double width;       //ширина
         private string colour = ""; //цвет
+
+        public string Name { get; set; }
 
         public double Length
         {
@@ -34,14 +36,15 @@ namespace Programming.Model
 
         public string Colour { get { return colour; } set { colour = value; } }
 
-        public Rectangle(double length, double width, string colour)
-        {
+        public Rectangles(string name, double length, double width, string colour)
+        {   
+            Name = name;
             Length = length;
             Width = width;
             Colour = colour;
         }
 
-        public Rectangle() { }
+        public Rectangles() { }
     }
 }
 // Класс Прямоугольник
