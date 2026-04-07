@@ -20,8 +20,7 @@ namespace Programming.Model
         {
             set
             {
-                if (value >= 0) minutesFlightTime = value;
-                else throw new ArgumentException(nameof(value), "Значение не может быть отрицательным");
+                minutesFlightTime = Validator.AssertOnPositiveValue(value, nameof(minutesFlightTime));
             }
             get { return minutesFlightTime; }
         }

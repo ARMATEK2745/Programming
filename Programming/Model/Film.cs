@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +20,9 @@ namespace Programming.Model
 
         public int MinutesDuration
         {
-            set {
-                if (value >= 0) minutesDuration = value;
-                else throw new ArgumentException(nameof(value),"Значение не может быть отрицательным");
+            set 
+            {
+                minutesDuration = Validator.AssertOnPositiveValue(value, nameof(minutesDuration));
             }
             get { return minutesDuration; }
         }
@@ -30,10 +31,7 @@ namespace Programming.Model
         {
             set
             {
-                if (value >= 1900 && value <= DateTime.Now.Year)
-                    releaseYear = value;
-                else throw new ArgumentException(nameof(value),"Год выпуска должен быть в диапазоне от 1900 до текущего года");
-
+                releaseYear = Validator.AssertValueInRange(value, 1900, DateTime.Now.Year, nameof(releaseYear));
             }
             get { return releaseYear; }
         }
@@ -44,8 +42,7 @@ namespace Programming.Model
         {
             set 
             {
-                if (value >= 0 && value <= 10) rating = value;
-                else throw new ArgumentException(nameof(value),"Рейтинг должен быть в диапазоне от 0 до 10");
+                rating = Validator.AssertValueInRange(value, 1, 10, nameof(rating));
             }
             get { return rating; }
         }

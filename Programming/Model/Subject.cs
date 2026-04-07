@@ -18,8 +18,7 @@ namespace Programming.Model
         {
             set
             {
-                if (value > 0 && value < 3) semester = value;
-                else throw new ArgumentException(nameof(value), "Семестр должен быть только 1 или 2");
+                semester = Validator.AssertValueInRange(value, 1, 2, nameof(semester));
             }
             get { return semester; }
         }
@@ -28,8 +27,7 @@ namespace Programming.Model
         {
             set
             {
-                if (value > 2 && value < 6) grade = value;
-                else throw new ArgumentException(nameof(value), "Оценка должна быть в диапозоне от 3 до 5");
+                grade = Validator.AssertValueInRange(value, 3, 5, nameof(grade));
             }
             get { return grade; }
         }

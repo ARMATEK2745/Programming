@@ -18,8 +18,7 @@ namespace Programming.Model
         {
             set
             {
-                if (value >= 0) length = value;
-                else throw new ArgumentException(nameof(value), "Значение не может быть отрицательным");
+                length = Validator.AssertOnPositiveValue(value, nameof(length));
             }
             get { return length; }
         }
@@ -28,8 +27,7 @@ namespace Programming.Model
         {
             set
             {
-                if (value >= 0) width = value;
-                else throw new ArgumentException(nameof(value), "Значение не может быть отрицательным");
+                width = Validator.AssertOnPositiveValue(value, nameof(width));
             }
             get { return width; }
         }

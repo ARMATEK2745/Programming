@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,8 +17,7 @@ namespace Programming.Model
         {
             set
             {
-                if (value >= 0 && value <= 23) hours = value;
-                else throw new ArgumentException(nameof(value), "Час должен быть в диапаоне от 0 до 23");
+                hours = Validator.AssertValueInRange(value, 0, 23, nameof(hours));
             }
             get { return hours; }
 
@@ -27,8 +27,7 @@ namespace Programming.Model
         {
             set
             {
-                if (value >= 0 && value <= 60) minutes = value;
-                else throw new ArgumentException(nameof(value), "Минуты должны быть в диапаоне от 0 до 60");
+                minutes = Validator.AssertValueInRange(value, 0, 60, nameof(minutes));
             }
             get { return minutes; }
         }
@@ -37,8 +36,7 @@ namespace Programming.Model
         {
             set
             {
-                if (value >= 0 && value <= 60) seconds = value;
-                else throw new ArgumentException(nameof(value), "Секунды должны быть в диапаоне от 0 до 60");
+                seconds = Validator.AssertValueInRange(value, 0, 60, nameof(seconds));
             }
             get { return seconds; }
         }
