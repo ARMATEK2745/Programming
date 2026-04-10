@@ -61,6 +61,11 @@
             textBoxNameFilm = new TextBox();
             listBoxFilms = new ListBox();
             rectangles = new GroupBox();
+            labelCenterRectangle = new Label();
+            labelYRectangle = new Label();
+            labelXRectangle = new Label();
+            textBoxYRectangle = new TextBox();
+            textBoxXRectangle = new TextBox();
             labelColor = new Label();
             labelWidth = new Label();
             labelLength = new Label();
@@ -397,6 +402,11 @@
             // 
             // rectangles
             // 
+            rectangles.Controls.Add(labelCenterRectangle);
+            rectangles.Controls.Add(labelYRectangle);
+            rectangles.Controls.Add(labelXRectangle);
+            rectangles.Controls.Add(textBoxYRectangle);
+            rectangles.Controls.Add(textBoxXRectangle);
             rectangles.Controls.Add(labelColor);
             rectangles.Controls.Add(labelWidth);
             rectangles.Controls.Add(labelLength);
@@ -407,10 +417,53 @@
             rectangles.Controls.Add(listBoxRectangles);
             rectangles.Location = new Point(8, 3);
             rectangles.Name = "rectangles";
-            rectangles.Size = new Size(300, 259);
+            rectangles.Size = new Size(300, 304);
             rectangles.TabIndex = 0;
             rectangles.TabStop = false;
             rectangles.Text = "Rectangles";
+            // 
+            // labelCenterRectangle
+            // 
+            labelCenterRectangle.AutoSize = true;
+            labelCenterRectangle.Location = new Point(150, 179);
+            labelCenterRectangle.Name = "labelCenterRectangle";
+            labelCenterRectangle.Size = new Size(45, 15);
+            labelCenterRectangle.TabIndex = 11;
+            labelCenterRectangle.Text = "Center:";
+            // 
+            // labelYRectangle
+            // 
+            labelYRectangle.AutoSize = true;
+            labelYRectangle.Location = new Point(206, 201);
+            labelYRectangle.Name = "labelYRectangle";
+            labelYRectangle.Size = new Size(17, 15);
+            labelYRectangle.TabIndex = 10;
+            labelYRectangle.Text = "Y:";
+            // 
+            // labelXRectangle
+            // 
+            labelXRectangle.AutoSize = true;
+            labelXRectangle.Location = new Point(151, 201);
+            labelXRectangle.Name = "labelXRectangle";
+            labelXRectangle.Size = new Size(17, 15);
+            labelXRectangle.TabIndex = 9;
+            labelXRectangle.Text = "X:";
+            // 
+            // textBoxYRectangle
+            // 
+            textBoxYRectangle.Location = new Point(206, 219);
+            textBoxYRectangle.Name = "textBoxYRectangle";
+            textBoxYRectangle.ReadOnly = true;
+            textBoxYRectangle.Size = new Size(44, 23);
+            textBoxYRectangle.TabIndex = 8;
+            // 
+            // textBoxXRectangle
+            // 
+            textBoxXRectangle.Location = new Point(150, 219);
+            textBoxXRectangle.Name = "textBoxXRectangle";
+            textBoxXRectangle.ReadOnly = true;
+            textBoxXRectangle.Size = new Size(45, 23);
+            textBoxXRectangle.TabIndex = 8;
             // 
             // labelColor
             // 
@@ -441,7 +494,7 @@
             // 
             // buttonFind
             // 
-            buttonFind.Location = new Point(150, 213);
+            buttonFind.Location = new Point(150, 258);
             buttonFind.Name = "buttonFind";
             buttonFind.Size = new Size(100, 23);
             buttonFind.TabIndex = 4;
@@ -478,7 +531,7 @@
             listBoxRectangles.ItemHeight = 15;
             listBoxRectangles.Location = new Point(6, 22);
             listBoxRectangles.Name = "listBoxRectangles";
-            listBoxRectangles.Size = new Size(128, 214);
+            listBoxRectangles.Size = new Size(128, 259);
             listBoxRectangles.TabIndex = 0;
             listBoxRectangles.SelectedIndexChanged += listBoxRectangles_SelectedIndexChanged;
             // 
@@ -550,5 +603,10 @@
         private Label labelGenreFilm;
         private TextBox textBoxRatingFilm;
         private TextBox textBoxGenreFilm;
+        private TextBox textBoxYRectangle;
+        private TextBox textBoxXRectangle;
+        private Label labelCenterRectangle;
+        private Label labelYRectangle;
+        private Label labelXRectangle;
     }
 }

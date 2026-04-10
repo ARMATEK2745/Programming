@@ -12,6 +12,8 @@ namespace Programming.Model
         private double width;       //ширина
         private string colour = ""; //цвет
 
+
+
         public string Name { get; set; }
 
         public double Length
@@ -34,12 +36,15 @@ namespace Programming.Model
 
         public string Colour { get { return colour; } set { colour = value; } }
 
-        public Rectangles(string name, double length, double width, string colour)
+        public Point2D Center { get; set; }
+
+        public Rectangles(string name, double length, double width, string colour, Point2D center)
         {   
             Name = name;
             Length = length;
             Width = width;
             Colour = colour;
+            Center = center;
         }
 
         public Rectangles() { }

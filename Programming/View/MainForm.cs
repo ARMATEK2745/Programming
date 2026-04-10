@@ -34,7 +34,8 @@ namespace Programming
                 double length = random.NextDouble() * 100 + 10; // 10Ц110
                 double width = random.NextDouble() * 100 + 10;  // 10Ц110
                 string colour = ((Colors)random.Next(colorCount)).ToString(); // произвольный цвет дл€ примера
-                _rectangles[i] = new Rectangles(name, length, width, colour);
+                Point2D center = new Point2D (random.NextDouble() * 100 + 10, random.NextDouble() * 100 + 10);
+                _rectangles[i] = new Rectangles(name, length, width, colour, center);
                 listBoxRectangles.Items.Add(name);
             }
 
@@ -185,6 +186,8 @@ namespace Programming
                 textBoxLength.Text = string.Empty;
                 textBoxWidth.Text = string.Empty;
                 textBoxColor.Text = string.Empty;
+                textBoxXRectangle.Text = string.Empty; // ќчищаем поле X центра
+                textBoxYRectangle.Text = string.Empty; // ќчищаем поле Y центра
             }
             else
             {
@@ -192,6 +195,9 @@ namespace Programming
                 textBoxLength.Text = rectangle.Length.ToString("F2");
                 textBoxWidth.Text = rectangle.Width.ToString("F2");
                 textBoxColor.Text = rectangle.Colour;
+                // «аполн€ем пол€ центра
+                textBoxXRectangle.Text = rectangle.Center.setX.ToString("F2");
+                textBoxYRectangle.Text = rectangle.Center.setY.ToString("F2");
             }
         }
 
