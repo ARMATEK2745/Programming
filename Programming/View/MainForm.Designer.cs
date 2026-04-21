@@ -61,6 +61,8 @@
             textBoxNameFilm = new TextBox();
             listBoxFilms = new ListBox();
             rectangles = new GroupBox();
+            labelIdRectangles = new Label();
+            textBoxIdRectangles = new TextBox();
             labelCenterRectangle = new Label();
             labelYRectangle = new Label();
             labelXRectangle = new Label();
@@ -402,6 +404,8 @@
             // 
             // rectangles
             // 
+            rectangles.Controls.Add(labelIdRectangles);
+            rectangles.Controls.Add(textBoxIdRectangles);
             rectangles.Controls.Add(labelCenterRectangle);
             rectangles.Controls.Add(labelYRectangle);
             rectangles.Controls.Add(labelXRectangle);
@@ -417,10 +421,28 @@
             rectangles.Controls.Add(listBoxRectangles);
             rectangles.Location = new Point(8, 3);
             rectangles.Name = "rectangles";
-            rectangles.Size = new Size(300, 304);
+            rectangles.Size = new Size(300, 384);
             rectangles.TabIndex = 0;
             rectangles.TabStop = false;
             rectangles.Text = "Rectangles";
+            // 
+            // labelIdRectangles
+            // 
+            labelIdRectangles.AutoSize = true;
+            labelIdRectangles.Location = new Point(6, 289);
+            labelIdRectangles.Name = "labelIdRectangles";
+            labelIdRectangles.Size = new Size(20, 15);
+            labelIdRectangles.TabIndex = 13;
+            labelIdRectangles.Text = "Id:";
+            // 
+            // textBoxIdRectangles
+            // 
+            textBoxIdRectangles.Location = new Point(6, 305);
+            textBoxIdRectangles.Name = "textBoxIdRectangles";
+            textBoxIdRectangles.ReadOnly = true;
+            textBoxIdRectangles.Size = new Size(100, 23);
+            textBoxIdRectangles.TabIndex = 12;
+            
             // 
             // labelCenterRectangle
             // 
@@ -608,5 +630,7 @@
         private Label labelCenterRectangle;
         private Label labelYRectangle;
         private Label labelXRectangle;
+        private Label labelIdRectangles;
+        private TextBox textBoxIdRectangles;
     }
 }

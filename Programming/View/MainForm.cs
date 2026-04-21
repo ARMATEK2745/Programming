@@ -34,7 +34,7 @@ namespace Programming
                 double length = random.NextDouble() * 100 + 10; // 10Ц110
                 double width = random.NextDouble() * 100 + 10;  // 10Ц110
                 string colour = ((Colors)random.Next(colorCount)).ToString(); // произвольный цвет дл€ примера
-                Point2D center = new Point2D (random.NextDouble() * 100 + 10, random.NextDouble() * 100 + 10);
+                Point2D center = new Point2D(random.NextDouble() * 100 + 10, random.NextDouble() * 100 + 10);
                 _rectangles[i] = new Rectangles(name, length, width, colour, center);
                 listBoxRectangles.Items.Add(name);
             }
@@ -183,6 +183,7 @@ namespace Programming
             if (rectangle == null)
             {
                 // ≈сли пр€моугольник null, очищаем пол€
+                textBoxIdRectangles.Text = string.Empty;
                 textBoxLength.Text = string.Empty;
                 textBoxWidth.Text = string.Empty;
                 textBoxColor.Text = string.Empty;
@@ -191,6 +192,7 @@ namespace Programming
             }
             else
             {
+                textBoxIdRectangles.Text = rectangle.Id.ToString();
                 // ќбновл€ем пол€ формы данными из выбранного пр€моугольника
                 textBoxLength.Text = rectangle.Length.ToString("F2");
                 textBoxWidth.Text = rectangle.Width.ToString("F2");
@@ -271,6 +273,7 @@ namespace Programming
 
 
         //------------------------------------‘ильмы---------------------------------------//
+
         private void listBoxFilms_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listBoxFilms.SelectedIndex == -1)
@@ -383,6 +386,6 @@ namespace Programming
             }
         }
 
-
+       
     }
 }
