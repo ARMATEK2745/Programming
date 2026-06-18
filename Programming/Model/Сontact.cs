@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Programming.Model
 {
+    /// <summary>
+    /// Хранит информацию о контакте
+    /// </summary>
     internal class Сontact
     {
         private string name = "";           //Имя
@@ -13,6 +16,9 @@ namespace Programming.Model
         private string phoneNumber = "";    //Номер телефона
         private string email = "";          //Электронная почта
 
+        /// <summary>
+        /// Возвращает и задаёт имя
+        /// </summary>
         public string Name { get { return name; } 
             set 
             { 
@@ -20,6 +26,9 @@ namespace Programming.Model
                 AssertStringContainsOnlyLetters(value, nameof(name));
             } }
 
+        /// <summary>
+        /// Возвращает и задаёт фамилию
+        /// </summary>
         public string Surname { get { return surname; } 
             set 
             {
@@ -27,8 +36,14 @@ namespace Programming.Model
                 AssertStringContainsOnlyLetters(value, nameof(surname)); 
             } }
 
+        /// <summary>
+        /// Возвращает и задаёт номер телефона
+        /// </summary>
         public string PhoneNumber { get { return phoneNumber; } set { phoneNumber = value; } }
 
+        /// <summary>
+        /// Возвращает и задаёт электронную почту
+        /// </summary>
         public string Email { get { return email; } set { email = value; } }
 
         public Сontact(string name, string surname, string phoneNumber, string email)
@@ -41,6 +56,14 @@ namespace Programming.Model
 
         public Сontact() { }
 
+
+        /// <summary>
+        /// Проверяет, что строка состоит только из латинских символов
+        /// </summary>
+        /// <param name="value">Проверяемая строка</param>
+        /// <param name="propertyName"> Имя свойства</param>
+        /// <returns>Возвращает true, если нет не латинских символов</returns>
+        /// <exception cref="ArgumentException">Ошибка, если строка содержит не только латинские буквы</exception>
         private void AssertStringContainsOnlyLetters(string value, string propertyName)
         {
             if (string.IsNullOrWhiteSpace(value))

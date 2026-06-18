@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Programming.Model.Enums
 {
-    /*internal class Manufacture
-    {
-    }*/
+    /// <summary>
+    /// Перечисление производителей
+    /// </summary>
     public enum Manufacture
     {
         Xiaomi,

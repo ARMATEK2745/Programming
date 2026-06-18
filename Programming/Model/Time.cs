@@ -7,12 +7,18 @@ using System.Threading.Tasks;
 
 namespace Programming.Model
 {
+    /// <summary>
+    /// Хранит информацию о времени
+    /// </summary>
     internal class Time
     {
         private int hours;
         private int minutes;
         private int seconds;
 
+        /// <summary>
+        /// Возвращает и задаёт час
+        /// </summary>
         public int Hours
         {
             set
@@ -23,6 +29,9 @@ namespace Programming.Model
 
         }
 
+        /// <summary>
+        /// Возвращает и задаёт минуты
+        /// </summary>
         public int Minutes
         {
             set
@@ -32,6 +41,9 @@ namespace Programming.Model
             get { return minutes; }
         }
 
+        /// <summary>
+        /// Возвращает и задаёт секунды
+        /// </summary>
         public int Seconds
         {
             set

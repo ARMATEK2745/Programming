@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Programming.Model
 {
+    /// <summary>
+    /// Хранит данные о фильме
+    /// </summary>
     internal class Film
     {
         private string name = "";
@@ -15,9 +18,14 @@ namespace Programming.Model
         private string genre = "";
         private double rating;
 
-
+        /// <summary>
+        /// Возвращает и задаёт название фильма
+        /// </summary>
         public string Name { get { return name; } set { name = value; } }
 
+        /// <summary>
+        /// Возвращает и задаёт продолжительность
+        /// </summary>
         public int MinutesDuration
         {
             set 
@@ -27,6 +35,10 @@ namespace Programming.Model
             get { return minutesDuration; }
         }
 
+
+        /// <summary>
+        /// Возвращает и задаёт год выпуска
+        /// </summary>
         public int ReleaseYear
         {
             set
@@ -36,8 +48,14 @@ namespace Programming.Model
             get { return releaseYear; }
         }
 
+        /// <summary>
+        /// Возвращает и задаёт жанр
+        /// </summary>
         public string Genre { get { return genre; } set { genre = value; } }
 
+        /// <summary>
+        /// Возвращает и задаёт рейтинг
+        /// </summary>
         public double Rating
         {
             set 

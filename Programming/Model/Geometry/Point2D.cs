@@ -7,11 +7,17 @@ using System.Xml.Linq;
 
 namespace Programming.Model.Geometry
 {
+    /// <summary>
+    /// Хранит координаты X и Y
+    /// </summary>
     internal class Point2D
     {
         private double x;
         private double y;
 
+        /// <summary>
+        /// Возвращает и задаёт значение координаты X
+        /// </summary>
         public double X
         {
             get { return x; }
@@ -21,6 +27,9 @@ namespace Programming.Model.Geometry
             }
         }
 
+        /// <summary>
+        /// Возвращает и задаёт значение координаты Y
+        /// </summary>
         public double Y
         {
             get { return y; }

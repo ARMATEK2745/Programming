@@ -148,7 +148,6 @@
             Controls.Add(tabControl1);
             Name = "MainForm";
             Text = "Programming Demo";
-            Load += MainForm_Load;
             tabControl1.ResumeLayout(false);
             enums.ResumeLayout(false);
             classes.ResumeLayout(false);

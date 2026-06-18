@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Programming.Model.Enums
 {
-    /*internal class Season
-    {
-    }*/
+    /// <summary>
+    /// Перечисление времен года
+    /// </summary>
     public enum Season
     {
         Spring,

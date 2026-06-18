@@ -6,16 +6,28 @@ using System.Threading.Tasks;
 
 namespace Programming.Model
 {
+    /// <summary>
+    /// Хранит в данные о рейсе
+    /// </summary>
     internal class Flight
     {
         private string departurePoint = "";
         private string destination = "";
         private int minutesFlightTime;
 
+        /// <summary>
+        /// Возвращает и задаёт пункт вылета
+        /// </summary>
         public string DeparturePoint { get { return departurePoint; } set { departurePoint = value; } }
 
+        /// <summary>
+        /// Возвращает и задаёт пункт назначения
+        /// </summary>
         public string Destination { get { return destination; } set { destination = value; } }
 
+        /// <summary>
+        /// Возвращает и задаёт время рейса.
+        /// </summary>
         public int MinutesFlightTime
         {
             set

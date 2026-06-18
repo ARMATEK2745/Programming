@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Programming.Model.Geometry
 {
+    /// <summary>
+    /// Хранит информацию о прямоугольнике
+    /// </summary>
     internal class Rectangles
     {
         private int _id;
@@ -16,7 +19,9 @@ namespace Programming.Model.Geometry
         private static int _allRectanglesCount = 0;
         private Point2D center;
 
-
+        /// <summary>
+        /// Возвращает уникальный идендификатор прямоугольника
+        /// </summary>
         public int Id
         {
             get { return _id; }
@@ -25,6 +30,9 @@ namespace Programming.Model.Geometry
 
         public string Name { get; set; }
 
+        /// <summary>
+        /// Возвращает и задаёт длину прямоугольника
+        /// </summary>
         public double Length
         {
             set
@@ -34,6 +42,9 @@ namespace Programming.Model.Geometry
             get { return length; }
         }
 
+        /// <summary>
+        /// Возвращает и задаёт ширину прямоугольника
+        /// </summary>
         public double Width
         {
             set
@@ -43,14 +54,22 @@ namespace Programming.Model.Geometry
             get { return width; }
         }
 
+        /// <summary>
+        /// Возвращает и задаёт цвет прямоугольника
+        /// </summary>
         public string Colour { get { return colour; } set { colour = value; } }
 
+        /// <summary>
+        /// Возвращает номер прямоугольника
+        /// </summary>
         public static int AllRectanglesCount()
         {
             return _allRectanglesCount;
         }
 
-
+        /// <summary>
+        /// Возвращает и задаёт координаты прямоугольника
+        /// </summary>
         public Point2D Center { get; set; }
 
 
@@ -68,6 +87,18 @@ namespace Programming.Model.Geometry
 
         public Rectangles() { _allRectanglesCount++; _id = _allRectanglesCount; }
 
+        /// <summary>
+        /// Создаёт прямоугольник с случайными значениями свойств
+        /// </summary>
+        /// <param name="minWidth"></param>
+        /// <param name="maxWidth"></param>
+        /// <param name="minLength"></param>
+        /// <param name="maxLength"></param>
+        /// <param name="minX"></param>
+        /// <param name="maxX"></param>
+        /// <param name="minY"></param>
+        /// <param name="maxY"></param>
+        /// <returns>Объект класса Rectangle</returns>
         public static Rectangles RandomRectangle(double minWidth, double maxWidth, double minLength, double maxLength, double minX, double maxX, double minY, double maxY)
         {
             Random rand = new Random();

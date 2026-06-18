@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Programming.Model.Enums
 {
-    /*internal class Genre
-    {
-    }*/
+    /// <summary>
+    /// Перечисление жанра
+    /// </summary>
 
     public enum Genre
     {

@@ -6,14 +6,23 @@ using System.Threading.Tasks;
 
 namespace Programming.Model
 {
+    /// <summary>
+    /// Хранит информацию о учебном предмете
+    /// </summary>
     internal class Subject
     {
         private string name = "";       // Название дисциплины
         private int semester;           // Семестр
         private int grade;              // Оценка (зачёт/экзамен)
 
+        /// <summary>
+        /// Возвращает и задаёт название предмета
+        /// </summary>
         public string Name { get { return name; } set { name = value; } }
 
+        /// <summary>
+        /// Возвращает и задаёт номер семестра
+        /// </summary>
         public int Semester
         {
             set
@@ -23,6 +32,9 @@ namespace Programming.Model
             get { return semester; }
         }
 
+        /// <summary>
+        /// Возвращает и задаёт оценку
+        /// </summary>
         public int Grade
         {
             set
