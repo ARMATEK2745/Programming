@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Shop13.Model
 {
+    /// <summary>
+    /// Перечисление категорий продукта
+    /// </summary>
     public enum Category
     {
         None,
