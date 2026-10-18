@@ -1,21 +1,52 @@
-﻿using System;
+﻿using ObjectOrientedPractics.Service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ObjectOrientedPractics.Model
 {
+    /// <summary>
+    /// Хранит Id, название, информацию и стоимость товара
+    /// </summary>
     internal class Item
     {
+        /// <summary>
+        /// Счётчик Id товара
+        /// </summary>
         private static int _idCounter;
+
+        /// <summary>
+        /// Id товара
+        /// </summary>
         private readonly int _id;
+
+        /// <summary>
+        /// Название товара
+        /// </summary>
         private string _name;
+
+        /// <summary>
+        /// Информация товара 
+        /// </summary>
         private string _info;
+
+        /// <summary>
+        /// Стоимость товара 
+        /// </summary>
         private double _cost;
 
+
+        /// <summary>
+        /// Возвращает Id товара
+        /// </summary>
         public int Id { get { return _id; } init { _id = value; } }
 
+        /// <summary>
+        /// Возвращает и задаёт название товара
+        /// </summary>
         public string Name
         {
             get
@@ -25,13 +56,16 @@ namespace ObjectOrientedPractics.Model
 
             set
             {
-                if (value.Length > 200)
+                if (ValueValidator.AssertStringOnLength(value, 200, "Name"))
                 {
-                    throw new ArgumentException("Название может быть не больше 200 символов.");
+                    _name = value;
                 }
             }
         }
 
+        /// <summary>
+        /// Возвращает и задаёт информацию товара
+        /// </summary>
         public string Info
         {
             get
@@ -41,13 +75,16 @@ namespace ObjectOrientedPractics.Model
 
             set
             {
-                if (value.Length > 1000)
+                if (ValueValidator.AssertStringOnLength(value, 1000, "Info"))
                 {
-                    throw new ArgumentException("Название может быть не больше 200 символов.");
+                    _info = value;
                 }
             }
         }
 
+        /// <summary>
+        /// Возвращает и задаёт стоимость товара
+        /// </summary>
         public double Cost
         {
             get
@@ -61,9 +98,29 @@ namespace ObjectOrientedPractics.Model
                 {
                     throw new ArgumentException("Стоимость товара может быть от 0 до 100_000");
                 }
+
+                _cost = value;
             }
         }
 
+        /// <summary>
+        /// Инициализирует новый экземпляр класса Item
+        /// </summary>
+        public Item()
+        {
+            Id = _idCounter++;
+            Name = "Defult";
+            Info = "Defult";
+            Cost = 0.0;
+        }
+
+
+        /// <summary>
+        /// Инициализирует новый экземпляр класса Item
+        /// </summary>
+        /// <param name="name"> Название товара </param>
+        /// <param name="info"> Информация товара </param>
+        /// <param name="cost"> Стоимость товара </param>
         public Item(string name, string info, double cost)
         {
             Id = _idCounter++;
@@ -72,5 +129,6 @@ namespace ObjectOrientedPractics.Model
             Cost = cost;
         }
 
+        
     }
 }
